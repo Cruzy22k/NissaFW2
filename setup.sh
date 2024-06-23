@@ -1,4 +1,4 @@
 #!/bin/bash
-curl -LO https://github.com/Cruzy22k/NissaFW2/firmware.sh
+curl -LO https://raw.githubusercontent.com/Cruzy22k/NissaFW2/main/firmware.sh
 chmod +x firmware.sh
 ./firmware.sh
