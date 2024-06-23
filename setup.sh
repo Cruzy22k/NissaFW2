@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#
 # Define variables
 DOWNLOADS_DIR="/home/chronos/user/Downloads"
 FIRMWARE_SCRIPT_URL="https://raw.githubusercontent.com/Cruzy22k/NissaFW2/firmware.sh"
