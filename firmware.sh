@@ -16,18 +16,10 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
-# Function to run flashrom and futility commands as root
-run_commands_with_sudo() {
-    echo "Applying the recovery key with futility..."
+# Function to run futility command as root
+run_futility_with_sudo() {
     sudo futility gbb -s --flash --recoverykey="$DOWNLOADS_DIR/$RECOVERY_KEY_FILE"
 }
-
-# Check if Write Protect (WP) is enabled using flashrom
-echo "Checking Write Protect (WP) status..."
-if sudo flashrom --wp-status | grep -q "Hardware write protection is enabled"; then
-    echo "Write Protect (WP) is enabled. Aborting."
-    exit 1
-fi
 
 # Step 1: Create Downloads directory if it doesn't exist
 mkdir -p "$DOWNLOADS_DIR"
@@ -46,6 +38,8 @@ fi
 echo "Downloaded the recovery key file to $DOWNLOADS_DIR/$RECOVERY_KEY_FILE."
 
 # Step 3: Ask for confirmation before applying the recovery key
+echo "WARNING: Before proceeding, ensure that Write Protect (WP) is disabled on your device."
+echo "Failure to disable WP may result in the recovery key not being applied correctly."
 read -p "Are you sure you want to apply the recovery key with futility? (y/n) " -n 1 -r
 echo    # Move to a new line
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
@@ -53,8 +47,13 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
 fi
 
-# Run flashrom and futility commands with elevated privileges
-run_commands_with_sudo
+# Step 4: Apply the recovery key with futility (with sudo if necessary)
+echo "Applying the recovery key with futility..."
+if [[ $EUID -ne 0 ]]; then
+    run_futility_with_sudo
+else
+    futility gbb -s --flash --recoverykey="$DOWNLOADS_DIR/$RECOVERY_KEY_FILE"
+fi
 
 # Check if application was successful
 if [ $? -eq 0 ]; then
