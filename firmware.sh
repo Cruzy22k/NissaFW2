@@ -10,11 +10,6 @@ fi
 RECOVERY_KEY_URL="https://drive.google.com/uc?export=download&id=1KizP1My9XHH4Q87R0TBzowkiYJgwbNky"
 RECOVERY_KEY_FILE="nissa_recovery_v1.vbpubk"
 
-# Ensure the script is run as root
-if [[ $EUID -ne 0 ]]; then
-   echo "This script must be run as root" 
-   exit 1
-fi
 
 # Step 1: Create Downloads directory if it doesn't exist
 mkdir -p "$DOWNLOADS_DIR"
