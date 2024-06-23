@@ -16,15 +16,15 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
-# Function to run futility command as root
-run_futility() {
+# Function to run flashrom and futility commands as root
+run_commands_with_sudo() {
     echo "Applying the recovery key with futility..."
     sudo futility gbb -s --flash --recoverykey="$DOWNLOADS_DIR/$RECOVERY_KEY_FILE"
 }
 
 # Check if Write Protect (WP) is enabled using flashrom
 echo "Checking Write Protect (WP) status..."
-if flashrom --wp-status | grep -q "Hardware write protection is enabled"; then
+if sudo flashrom --wp-status | grep -q "Hardware write protection is enabled"; then
     echo "Write Protect (WP) is enabled. Aborting."
     exit 1
 fi
@@ -53,8 +53,8 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
 fi
 
-# Run futility command with elevated privileges
-run_futility
+# Run flashrom and futility commands with elevated privileges
+run_commands_with_sudo
 
 # Check if application was successful
 if [ $? -eq 0 ]; then
@@ -65,4 +65,3 @@ else
 fi
 
 echo "You are done. Congratulations!"
-
