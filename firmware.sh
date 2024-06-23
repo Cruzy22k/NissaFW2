@@ -63,4 +63,4 @@ else
     exit 1
 fi
 
-echo "You are done. Congratulations!"
+echo "Process completed sucessfully, reboot and try to boot a shim"
