@@ -16,6 +16,19 @@ if [[ $EUID -eq 0 ]]; then
    exit 1
 fi
 
+# Function to run futility command as root
+run_futility() {
+    echo "Applying the recovery key with futility..."
+    sudo futility gbb -s --flash --recoverykey="$DOWNLOADS_DIR/$RECOVERY_KEY_FILE"
+}
+
+# Check if Write Protect (WP) is enabled using flashrom
+echo "Checking Write Protect (WP) status..."
+if flashrom --wp-status | grep -q "Hardware write protection is enabled"; then
+    echo "Write Protect (WP) is enabled. Aborting."
+    exit 1
+fi
+
 # Step 1: Create Downloads directory if it doesn't exist
 mkdir -p "$DOWNLOADS_DIR"
 
@@ -40,10 +53,8 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 1
 fi
 
-# Step 4: Apply the recovery key with futility
-echo "Applying the recovery key with futility..."
-# Assuming 'futility' command is correctly configured and available
-futility gbb -s --flash --recoverykey="$DOWNLOADS_DIR/$RECOVERY_KEY_FILE"
+# Run futility command with elevated privileges
+run_futility
 
 # Check if application was successful
 if [ $? -eq 0 ]; then
@@ -54,3 +65,4 @@ else
 fi
 
 echo "You are done. Congratulations!"
+
