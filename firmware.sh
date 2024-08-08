@@ -7,7 +7,7 @@ else
     DOWNLOADS_DIR="$HOME/Downloads"
 fi
 
-RECOVERY_KEY_URL="https://drive.google.com/uc?export=download&id=1KizP1My9XHH4Q87R0TBzowkiYJgwbNky"
+RECOVERY_KEY_URL="https://raw.githubusercontent.com/Cruzy22k/NissaFW2/main/nissa_recovery_v1.vbpubk"
 RECOVERY_KEY_FILE="nissa_recovery_v1.vbpubk"
 
 
