@@ -49,4 +49,6 @@ else
     exit 1
 fi
 
-echo "Process completed successfully, reboot and try to boot a shim"
+echo "Process completed successfully, reboot and try to boot a shim" 
+pause 100 
+echo "Made by cruzy22k" 
