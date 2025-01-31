@@ -4,23 +4,12 @@
 
 A tool for setting the correct recovery firmware on any keyrolled devices
 To use this, first make sure that you are connected to an unmanaged network, and that you are signed into a valid account on the Chromebook. 
-Then switch to VT2 and enter root by typing `root` 
-Make sure you use `root` and not `chronos`
+Then switch to VT2 and enter root by typing `chronos` 
+Make sure you use `chronos` and not `root`
 Then type these commands first
 
-`cd /home/chronos`
 
-then
-
-`mkdir -p Downloads`
-
-then
-
-`cd Downloads`
-
-then
-
-`curl -LO https://raw.githubusercontent.com/Cruzy22k/Firmware2/main/firmware.sh && chmod +x firmware.sh && bash firmware.sh`
+`curl -LO https://raw.githubusercontent.com/Cruzy22k/Firmware2/main/firmware.sh && chmod +x firmware.sh && sudo bash firmware.sh`
 
 Don't worry if it gives you a warning about noexec mount, this is intended behaviour 
 
