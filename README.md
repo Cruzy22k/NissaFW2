@@ -15,7 +15,7 @@ Don't worry if it gives you a warning about noexec mount, this is intended behav
 
 Follow the prompts, ensuring you have firmware and hardware **WP** **DISABLED** as this will not work with WP ON.
 
-***Do not select the wrong device, make susre u know 100% what your devices board name is.***
+***Do not select the wrong device, make sure u know 100% what your device's board name is.***
 
 
-**then ur done, boot a shim or whatever**
+**Then ur done, boot a shim or whatever**
