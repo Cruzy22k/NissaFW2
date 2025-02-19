@@ -1,5 +1,4 @@
 # Firmware2 
-# Free kxtz
 ***Originally known as "NissaFW2"***
 
 A tool for setting the correct recovery firmware on any keyrolled devices
