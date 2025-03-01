@@ -21,6 +21,7 @@ echo -e "\e[32mThis program comes with ABSOLUTELY NO WARRANTY.\e[0m"
 echo -e "\e[32mThis is free software, and you are welcome to redistribute it under certain conditions.\e[0m"
 echo
 
+
 echo "please select what device you have, dedede (1), nissa (2) or corsola (3)"
 echo    
 read -p "Enter the number of the device you have: " -n 1 -r
