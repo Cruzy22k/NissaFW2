@@ -16,11 +16,9 @@ RECOVERY_KEY_DEDEDE_FILE="dedede_recovery_v1.vbpubk"
 RECOVERY_KEY_CORSOLA="https://raw.githubusercontent.com/Cruzy22k/NissaFW2/main/corsola_recovery_v1.vbpubk"
 RECOVERY_KEY_CORSOLA_FILE="corsola_recovery_v1.vbpubk"
 
-echo -e "\e[0;37;42m<Firmware2>  Copyright (C) 2024  <Cruzy22k>
-This program comes with ABSOLUTELY NO WARRANTY.
-
-This is free software, and you are welcome to redistribute it
-under certain conditions.\e[0m"
+echo -e "\e[1;32m<Firmware2>  Copyright (C) 2024  Cruzy22k\e[0m"
+echo -e "\e[1mThis program comes with ABSOLUTELY NO WARRANTY.\e[0m"
+echo -e "This is free software, and you are welcome to redistribute it under certain conditions.\n"
 
 echo "please select what device you have, dedede (1), nissa (2) or corsola (3)"
 echo    
