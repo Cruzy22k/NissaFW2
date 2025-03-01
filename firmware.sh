@@ -15,12 +15,17 @@ RECOVERY_KEY_DEDEDE="https://raw.githubusercontent.com/Cruzy22k/NissaFW2/main/de
 RECOVERY_KEY_DEDEDE_FILE="dedede_recovery_v1.vbpubk"
 RECOVERY_KEY_CORSOLA="https://raw.githubusercontent.com/Cruzy22k/NissaFW2/main/corsola_recovery_v1.vbpubk"
 RECOVERY_KEY_CORSOLA_FILE="corsola_recovery_v1.vbpubk"
-# Select the recovery key file to download
+
+echo -e "\e[0;37;42m<Firmware2>  Copyright (C) 2024  <Cruzy22k>
+This program comes with ABSOLUTELY NO WARRANTY.
+
+This is free software, and you are welcome to redistribute it
+under certain conditions.\e[0m"
 
 echo "please select what device you have, dedede (1), nissa (2) or corsola (3)"
-echo    # Move to a new line 
+echo    
 read -p "Enter the number of the device you have: " -n 1 -r
-echo    # Move to a new line
+echo   
 
 
 echo "DEBUG: You entered '$REPLY'"
@@ -65,7 +70,7 @@ echo "Downloaded the recovery key file to $DOWNLOADS_DIR/$RECOVERY_KEY_FILE."
 echo "WARNING: Before proceeding, ensure that Write Protect (WP) is disabled on your device."
 echo "Failure to disable WP may result in the recovery key not being applied correctly."
 read -p "Are you sure you want to apply the recovery key with futility? (y/n) " -n 1 -r
-echo    # Move to a new line
+echo    
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     echo "Aborting the process."
     exit 1
@@ -107,12 +112,12 @@ echo " "
 
 # Option to reboot the system
 read -p "Do you want to reboot now? (y/n) " -n 1 -r
-echo    # Move to a new line   
+echo   
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     sudo reboot
 fi
 
-echo   # Move to a new line
+echo   
 sleep 10
 
 
