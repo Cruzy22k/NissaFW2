@@ -3,7 +3,8 @@
 
 **This tool only works on non-factory keyrolled Chromebooks.**
 
-A tool for setting the correct recovery firmware on keyrolled devices
+A tool for setting the correct recovery firmware on keyrolled devices.
+
 To use this, first make sure that you are connected to an unmanaged network, and that you are signed into a valid account on the Chromebook. 
 Then switch to VT2 and enter root by typing `chronos` 
 Make sure you use `chronos` and not `root`
