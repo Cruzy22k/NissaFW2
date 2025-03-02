@@ -4,7 +4,7 @@
 # This script requires to be ran as chronos, not root. Failure to do so may result in the recovery key not being applied correctly, or the device not being able to access the recovery key file.
 
 if grep -q "Chrom" /etc/lsb-release ; then
-    DOWNLOADS_DIR="/home/chronos/user/Downloads"
+    DOWNLOADS_DIR="/home/chronos/user/MyFiles/Downloads"
 else
     DOWNLOADS_DIR="$HOME/Downloads"
 fi
